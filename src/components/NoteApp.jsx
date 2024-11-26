@@ -16,11 +16,15 @@ const NoteApp = () => {
 
   const addNote = async () => {
     if (content.trim()) {
-      await addDoc(collection(db, "catatan"), {
-        content,
-        date: new Date(),
-      });
-      setContent("");
+      try {
+        await addDoc(collection(db, "catatan"), {
+          content,
+          date: new Date(),
+        });
+        setContent("");
+      } catch (error) {
+        console.error("Error adding note:", error);
+      }
     }
   };
 

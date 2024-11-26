@@ -1,16 +1,18 @@
+
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
+
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  apiKey: "AIzaSyB8g6kCR8laDnH1YCF9cYVy10lF1y7s2i0",
+  authDomain: "bakwan-jagung.firebaseapp.com",
+  projectId: "bakwan-jagung",
+  storageBucket: "bakwan-jagung.appspot.com",
+  messagingSenderId: "710653450064",
+  appId: "1:710653450064:web:5cbf9ff4240922b03ffe55",
+  measurementId: "G-VBHD7G08PJ"
 };
+
 
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
-
-
