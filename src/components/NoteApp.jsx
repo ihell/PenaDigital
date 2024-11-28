@@ -29,30 +29,39 @@ const NoteApp = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center p-4">
-      <h1 className="text-3xl font-bold mb-6 text-gray-800">Notes</h1>
-      <div className="mb-6 w-full max-w-lg">
+    <div className="min-h-screen bg-gray-200 flex flex-col items-center py-8">
+      <h1 className="text-4xl font-bold mb-6 text-gray-800 font-handwriting">
+        My Notes
+      </h1>
+      <div className="mb-6 w-full max-w-lg bg-paper bg-cover bg-no-repeat p-4 rounded-lg shadow-lg">
         <textarea
-          className="w-full p-4 border rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full h-32 p-4 border border-dashed rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-500 font-handwriting text-gray-800 bg-transparent"
           placeholder="Write your note here..."
           value={content}
           onChange={(e) => setContent(e.target.value)}
+          style={{
+            backgroundImage:
+              "linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0) 50%)",
+            backgroundSize: "100% 2.5rem",
+          }}
         />
         <button
-          className="mt-3 w-full px-4 py-2 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600"
+          className="mt-3 w-full px-4 py-2 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600 font-handwriting"
           onClick={addNote}
         >
           Add Note
         </button>
       </div>
-      <div className="w-full max-w-lg space-y-4">
+      <div className="w-full max-w-lg grid grid-cols-2 gap-4">
         {notes.map((note) => (
           <div
             key={note.id}
-            className="p-4 border rounded-lg shadow relative bg-gray-50 bg-paper"
+            className="flex flex-col justify-between items-center p-4 h-32 border border-gray-300 bg-paper bg-cover rounded-lg shadow relative text-center"
           >
-            <p className="text-gray-700 font-medium mb-2">{note.content}</p>
-            <span className="text-xs text-gray-500 absolute bottom-2 right-2">
+            <p className="text-gray-800 font-handwriting text-lg">
+              {note.content}
+            </p>
+            <span className="text-xs text-gray-500 font-sans mt-2">
               {new Date(note.date.toDate()).toLocaleString()}
             </span>
           </div>

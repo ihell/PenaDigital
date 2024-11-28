@@ -2,9 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Tambahan untuk gaya kertas */
-.bg-paper {
-  background-color: #fdfdfd; /* Warna dasar seperti kertas */
-  background-size: 150px 150px; /* Ukuran pola */
-  background-image: url('https://www.transparenttextures.com/patterns/white-dots.png');
+@layer utilities {
+  .bg-paper {
+    background-color: #fdf8e4;
+    background-image: url("https://www.transparenttextures.com/patterns/white-diamond.png");
+    background-size: 4px 4px;
+  }
 }
