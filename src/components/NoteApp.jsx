@@ -49,7 +49,7 @@ const NoteApp = () => {
           className="mt-3 w-full px-4 py-2 bg-[#6b4423] text-white rounded-lg shadow hover:bg-[#5a3820] font-handwriting"
           onClick={addNote}
         >
-          Add Note
+          Send
         </button>
       </div>
       <div className="w-full max-w-lg grid grid-cols-2 gap-4">
