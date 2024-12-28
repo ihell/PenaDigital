@@ -34,17 +34,17 @@ const NoteApp = () => {
         My Notes
       </h1>
       <div className="mb-6 w-full max-w-lg bg-paper bg-cover bg-no-repeat p-4 rounded-lg shadow-lg">
-      <textarea
-        className="w-full h-32 p-4 border border-dashed rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-500 font-handwriting text-gray-800 bg-transparent placeholder:text-[#6b4423]"
-        placeholder="Write your note here..."
-        value={content}
-        onChange={(e) => setContent(e.target.value)}
-        style={{
-          backgroundImage:
+        <textarea
+          className="w-full h-32 p-4 border border-dashed rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-500 font-handwriting text-gray-800 bg-transparent placeholder:text-[#6b4423]"
+          placeholder="Write your note here..."
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+          style={{
+            backgroundImage:
               "linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0) 50%)",
-          backgroundSize: "100% 2.5rem",
+            backgroundSize: "100% 2.5rem",
           }}
-            />
+        />
         <button
           className="mt-3 w-full px-4 py-2 bg-[#6b4423] text-white rounded-lg shadow hover:bg-[#5a3820] font-handwriting"
           onClick={addNote}
@@ -56,7 +56,11 @@ const NoteApp = () => {
         {notes.map((note) => (
           <div
             key={note.id}
-            className="flex flex-col justify-between items-center p-4 h-32 border border-gray-300 bg-paper bg-cover rounded-lg shadow relative text-center"
+            className="flex flex-col justify-between items-center p-4 border border-gray-300 bg-paper bg-cover rounded-lg shadow relative text-center"
+            style={{
+              minHeight: "auto", // Tinggi minimum
+              height: "auto", // Penyesuaian otomatis
+            }}
           >
             <p className="text-gray-800 font-handwriting text-lg">
               {note.content}
